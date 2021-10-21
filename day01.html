@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .popup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 900px;
+            height: 417px;
+            border: #ddd solid 1px;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            z-index: 100;
+        }
+        
+        .popup h2 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+        
+        .popup h2 span {
+            color: red;
+        }
+        
+        .popup p {
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+        
+        .shuoming {
+            margin-top: 52px;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 179px;
+            border: none;
+            background-color: #F5F7FA;
+            outline: none;
+            border-radius: 6px;
+            vertical-align: top;
+            padding: 20px;
+            resize: none;
+            letter-spacing: 1px;
+        }
+        
+        button {
+            float: right;
+            width: 60px;
+            height: 30px;
+            background-color: #F39800;
+            border: none;
+            margin-top: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+        
+        .zhe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #323232;
+            opacity: .4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="w">
+        <form class="popup">
+            <h2 class="shuoming">举报说明</h2>
+            <p>平台收到举报信息后将对比进行处理，后台会记录举报人及举报信息，提交举报信息将视为举报人愿其举报行为及结果负责。感谢您对平台的支持，我们将努力维护平台环境，给您更好的体验</p>
+            <h2 class="reason">举报理由<span>*</span></h2>
+            <textarea name="reason" id="ly" cols="30" rows="6" placeholder="请填写举报理由"></textarea>
+            <button>提交</button>
+            <div class="close"><span>x</span></div>
+        </form>
+        <div class="zhe"></div>
+    </div>
+
+
+    <script>
+        let close = document.querySelector('.close')
+        let w = document.querySelector('.w')
+        close.addEventListener('click', function() {
+            w.style.display = "none"
+        })
+        window.addEventListener('keydown', function() {
+            w.style.display = "block"
+        })
+    </script>
+</body>
+
+</html>
